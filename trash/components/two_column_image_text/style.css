@@ -1,0 +1,190 @@
+/* TWO COLUMN IMAGE TEXT */
+.comp_two_column_image_text {
+  padding-bottom: 32px;
+}
+.comp_two_column_image_text .row {
+  border-top: 1px solid var(--color4);
+  border-bottom: 1px solid var(--color4);
+  padding-top: 156px;
+  padding-bottom: 156px;
+}
+.comp_two_column_image_text .columns {
+  align-items: center;
+}
+.comp_two_column_image_text .columns.reverse {
+  flex-direction: row-reverse;
+}
+.comp_two_column_image_text .column1 {
+  width: 57.3%;
+}
+.comp_two_column_image_text .column2 {
+  width: 42.7%;
+  padding-left: 162px;
+}
+.comp_two_column_image_text .columns.reverse .column2 {
+  padding-left: 0;
+  padding-right: 162px;
+}
+.comp_two_column_image_text .media__wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 614px;
+  position: relative;
+}
+.comp_two_column_image_text .media__wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.comp_two_column_image_text .media__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color4);
+  z-index: 1000;
+  border: none;
+  object-fit: contain;
+  background-size: contain;
+  opacity: 0;
+  visibility: hidden;
+}
+.comp_two_column_image_text .media__wrapper.video:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color1);
+  z-index: 0;
+  opacity: 0;
+  transition: all 300ms var(--easing);
+}
+.comp_two_column_image_text .media__wrapper.video:hover:after {
+  opacity: 0.1;
+}
+.comp_two_column_image_text .media__wrapper .play__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 99px;
+  height: 99px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+.comp_two_column_image_text .media__wrapper .play__button svg {
+  transition: all 200ms var(--easing);
+}
+.comp_two_column_image_text .media__wrapper .play__button:hover svg {
+  transform: translateX(3px);
+}
+.comp_two_column_image_text .media__wrapper .play__button svg {
+  fill: #fff;
+}
+.comp_two_column_image_text .media__wrapper.video.video__triggered .play__button {
+  display: none;
+}
+.comp_two_column_image_text .media__wrapper.video.video__triggered iframe {
+  opacity: 1;
+  visibility: visible;
+}
+.comp_two_column_image_text .column2 .small__text {
+  margin-bottom: 120px;
+}
+.comp_two_column_image_text .column2 .headline__text {
+  margin-bottom: 40px;
+}
+.comp_two_column_image_text .column2 .site__button {
+  margin-top: 35px;
+}
+@media (max-width: 1832px) {
+  .comp_two_column_image_text .media__wrapper {
+    height: 34vw;
+  }
+  .comp_two_column_image_text .column2 .small__text {
+    margin-bottom: 5vw;
+  }
+  .comp_two_column_image_text .columns {
+    align-items: flex-start
+  }
+  .comp_two_column_image_text .column1 {
+    width: 50%;
+  }
+  .comp_two_column_image_text .column2 {
+    width: 50%;
+    padding-left: 6vw;
+  }
+  .comp_two_column_image_text .columns.reverse .column2 {
+    padding-right: 6vw;
+  }
+}
+@media all and (max-width: 979px) {
+  .comp_two_column_image_text .row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media all and (max-width: 767px) {
+  .comp_two_column_image_text .row {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .comp_two_column_image_text .column1,
+  .comp_two_column_image_text .column2 {
+    width: 100%;
+  }
+  .comp_two_column_image_text .column1 {
+    margin-bottom: 65px;
+  }
+  .comp_two_column_image_text .column2 {
+    padding-left: 0;
+  }
+  .comp_two_column_image_text .columns.reverse .column2 {
+    padding-right: 0;
+  }
+  .comp_two_column_image_text .media__wrapper {
+    height: 60vw;
+    transform: none !important;
+  }
+}
+@media all and (max-width: 480px) {
+  .comp_two_column_image_text {
+    padding-top: 0;
+  }
+  .comp_two_column_image_text .row {
+    padding-top: 64px;
+    padding-bottom: 75px;
+  }
+  .comp_two_column_image_text .column2 .small__text {
+    margin-bottom: 38px;
+  }
+  .comp_two_column_image_text .media__wrapper {
+    height: 56.3vw;
+  }
+  .comp_two_column_image_text .media__wrapper .play__button {
+    width: 53px;
+    height: 53px;
+  }
+  .comp_two_column_image_text .media__wrapper .play__button svg {
+    width: 13.5px;
+    height: 15px;
+  }
+  .comp_two_column_image_text .column2 .headline__text {
+    margin-bottom: 29px;
+  }
+}

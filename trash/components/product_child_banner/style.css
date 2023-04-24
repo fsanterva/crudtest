@@ -1,0 +1,105 @@
+/* PRODUCT CHILD BANNER */
+section.compSection.comp_product_child_banner {
+  padding-top: 140px;
+  padding-bottom: 214px;
+}
+.comp_product_child_banner .row {
+  background: var(--color3);
+  border-radius: 20px;
+  padding-top: 114px;
+  height: 749px;
+}
+.comp_product_child_banner .info {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.comp_product_child_banner .info .headline__text {
+  font-size: 50px;
+  letter-spacing: -1.25px;
+  line-height: 1.5;
+}
+.comp_product_child_banner .info .text__summary {
+  font-size: 12px;
+  line-height: 18px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  margin-bottom: 17px;
+}
+.comp_product_child_banner .info .site__button {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 184px;
+}
+.comp_product_child_banner .img_wrap {
+  text-align: center;
+  width: 1000px;
+  height: 538px;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.comp_product_child_banner .img_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media all and (max-width: 1832px) {
+  section.compSection.comp_product_child_banner {
+    padding-bottom: 10vw;
+  }
+  .comp_product_child_banner .row {
+    padding-top: 114px;
+    height: 45vw;
+  }
+  .comp_product_child_banner .img_wrap {
+    width: 60vw;
+    height: auto;
+  }
+}
+@media all and (max-width: 1399px) {
+  .comp_product_child_banner .row {
+    padding-top: 8vw;
+    height: auto;
+  }
+  .comp_product_child_banner .img_wrap {
+    position: relative;
+    width: 65vw;
+    top: 70px;
+    margin-top: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .comp_product_child_banner .img_wrap {
+    width: 80vw;
+  }
+  .comp_product_child_banner .row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media all and (max-width: 480px) {
+  section.compSection.comp_product_child_banner {
+    padding-top: 110px;
+    padding-bottom: 20px
+  }
+  .comp_product_child_banner .row {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+  .comp_product_child_banner .info .headline__text {
+    font-size: 40px;
+    letter-spacing: -1px;
+    line-height: 1.25;
+  }
+  .comp_product_child_banner .img_wrap {
+    top: 0px;
+    margin-top: 50px;
+  }
+}

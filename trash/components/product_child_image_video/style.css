@@ -1,0 +1,21 @@
+/* PRODUCT CHILD IMAGE VIDEO */
+.comp_product_child_image_video .imagevideo__block {
+  width:100%;
+  height: 970px;
+  position:  relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.comp_product_child_image_video .row__full.row--media .imagevideo__block {
+  border-radius: 0px;
+}
+@media all and (max-width: 1832px) {
+  .comp_product_child_image_video .imagevideo__block {
+    height: 50vw;
+  }
+}
+@media all and (max-width: 979px) {
+  .comp_product_child_image_video .imagevideo__block {
+    height: 60vw;
+  }
+}

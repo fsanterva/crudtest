@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'ArticulatCF';
+    src: url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-Medium.woff2') format('woff2'),
+        url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ArticulatCF';
+    src: url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-Regular.woff2') format('woff2'),
+        url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ArticulatCF';
+    src: url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-ExtraBold.woff2') format('woff2'),
+        url('/wp-content/themes/b2btheme/assets/fonts/ArticulatCF-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
