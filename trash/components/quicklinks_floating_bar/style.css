@@ -48,7 +48,7 @@
 }
 @media all and (min-width: 1921px) {
   .comp_quicklinks_floating_bar.fixed .row {
-    top: 140px;
+/*     top: 140px; */
   }
 }
 @media all and (max-width:1199px) {

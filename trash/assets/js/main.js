@@ -172,6 +172,8 @@
         var diff = initscrolled - initinitY;
         var ratio = Math.round((diff / initheight) * 100);
         el.find('img').css('transform','translateY('+parseInt( (ratio * initspeed) )+'px)');
+      }else{
+        el.find('img').css('transform','translateY(0px)');
       }
 
       $(window).scroll(function() {
@@ -188,6 +190,8 @@
             var diff = scrolled - initY;
             var ratio = Math.round((diff / height) * 100);
             that.find('img').css('transform','translateY('+parseInt( (ratio * speed) )+'px)');
+          }else{
+            that.find('img').css('transform','translateY(0px)');
           }
         });
 
@@ -221,41 +225,7 @@
     }
   }
   
-function bodyResponsiveScaleUp() {
-  var baseWidth = 1920;
-  var windowWidth = $(window).width();
-  var scaleValue = windowWidth/baseWidth;
-  
-  if( windowWidth > baseWidth ) {
-    $('body header, body #beforemain_wrap, body .fullscreen__menu, body .quoteForm').css({
-      'transform':'scale('+scaleValue+')',
-      'transform-origin':'top center'
-    });
-    
-    //FIX FOR INNER FIXED POSITIONED ELEMENTS
-    if( $('.comp_quicklinks_floating_bar').length ) {
-      var qlinksTop = $('.comp_quicklinks_floating_bar').offset().top;
-      var prevSection = $('.comp_quicklinks_floating_bar').prev('section');
 
-      $(window).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        if( scrollTop > qlinksTop -100) {
-          $('.comp_quicklinks_floating_bar').insertAfter( 'header' );
-          $('.comp_quicklinks_floating_bar .row').css({
-            'transform':'scale('+scaleValue+')',
-            'transform-origin':'top center'
-          });
-        }else{
-          $('.comp_quicklinks_floating_bar').insertAfter( prevSection );
-          $('.comp_quicklinks_floating_bar .row').css({
-            'transform':'scale(1)',
-            'transform-origin':'top center'
-          });
-        }
-      });
-    }
-  }
-}
   
 function videoPlayHandler() {
   $(document).on('click', '.imagevideo__block.media__type_video .play__button', function() {
@@ -344,7 +314,6 @@ $(document).ready(function() {
   
   initIsOnScreen();
   stickyHeader();
-  bodyResponsiveScaleUp();
   videoPlayHandler();
   rowHeadingColumnVisibility();
   blogPostContentEdit();

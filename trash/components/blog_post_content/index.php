@@ -10,7 +10,9 @@ $excerpt = get_the_excerpt($pid);
 $date = get_the_date('m.d.Y', $pid);
 $author_id = get_post_field ('post_author', $pid);
 $display_name = get_the_author_meta( 'display_name' , $author_id );
-$primary_term_name = yoast_get_primary_term( 'category', $pid );
+// $primary_term_name = yoast_get_primary_term( 'category', $pid );
+$primary_term_ID = get_post_meta( $pid, 'rank_math_primary_category', true );
+$primary_term_obj = get_term_by( 'id', $primary_term_ID, 'category');
 $prev_post = get_adjacent_post(false, '', true);
 $next_post = get_adjacent_post(false, '', false);
 
@@ -37,7 +39,7 @@ require get_template_directory() . '/inc/component-wrapper-top.php';
       <span class="author">By <?= $display_name; ?></span>
       <?php endif; ?>
       <?php if($showParentCat) : ?>
-      <span class="cat"><?= $primary_term_name; ?></span>
+      <span class="cat"><?= $primary_term_obj->name; ?></span>
       <?php endif; ?>
     </div>
   </div>

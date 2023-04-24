@@ -4599,11 +4599,15 @@
                         "class": "card__style",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 2,
-                    "max": 4,
+                    "acfe_save_meta": 0,
+                    "acfe_repeater_stylised_button": 0,
                     "layout": "block",
+                    "pagination": 0,
+                    "min": 2,
+                    "max": 0,
+                    "collapsed": "",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_632a6dc00ae75",
@@ -4720,9 +4724,7 @@
                             "ui_off_text": "",
                             "parent_repeater": "field_632a6d8d0ae74"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "acfe_repeater_stylised_button": 0
+                    ]
                 },
                 {
                     "key": "field_632a6b840ae6e",
@@ -8478,5 +8480,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1677575433
+    "modified": 1681969751
 }

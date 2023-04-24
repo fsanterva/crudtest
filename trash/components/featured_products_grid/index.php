@@ -67,7 +67,10 @@ require get_template_directory() . '/inc/component-wrapper-top.php';
         $ptagline = get_field('product_tagline', $pid);
         $pdesc = get_field('product_short_description', $pid);
         $pcat = get_the_terms( $pid, 'product_type' );
-        $primary_term_name = yoast_get_primary_term( 'product_type', $pid );
+//         $primary_term_name = yoast_get_primary_term( 'product_type', $pid );
+        $primary_term_ID = get_post_meta( $pid, 'rank_math_primary_product_type', true );
+        $primary_term_obj = get_term_by( 'id', $primary_term_ID, 'product_type');
+        $primary_term_name = $primary_term_obj->name;
       ?>
 
         <?php if($key == 0) : ?>

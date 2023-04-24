@@ -12,7 +12,9 @@ $cta = $data->heading_tab_site_button;
 
 $feed = $data->feed;
 $pid = get_the_ID();
-$primary_term_name = yoast_get_primary_term( 'category', $pid );
+// $primary_term_name = yoast_get_primary_term( 'category', $pid );
+$primary_term_ID = get_post_meta( $pid, 'rank_math_primary_category', true );
+$primary_term_obj = get_term_by( 'id', $primary_term_ID, 'category');
 
 $mainCTA = $data->site_button;
 
@@ -59,7 +61,7 @@ require get_template_directory() . '/inc/component-wrapper-top.php';
       'post_type'       => 'post',
       'posts_per_page'  => -1,
       'post_status '    => array('publish'),
-      'category_name'   => $primary_term_name
+      'category_name'   => $primary_term_obj->name
     );
     $result = new WP_Query( $myargs );
     $new_search = array_slice($result->posts, 0, 3);

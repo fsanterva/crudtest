@@ -125,7 +125,7 @@ $quoteForm = get_field('quote_form_shortcode', 'option');
 $headerType = get_field('header_type', get_the_ID());
 ?>
 <?php if( !empty($fullscreen_menu_name) ) : ?>
-<div class="fullscreen__menu layout__<?=$fullscreen_menu_style?>">
+<div class="fullscreen__menu layout__<?=$fullscreen_menu_style?> scalable__elements">
   <div class="inner__wrap">
     <button class="closeToggle">
       <span class="line1"></span>
@@ -142,7 +142,7 @@ $headerType = get_field('header_type', get_the_ID());
 <?php endif; ?>
   
 <?php if( !empty($quoteForm) ) : ?>
-<div class="quoteForm">
+<div class="quoteForm scalable__elements">
   <div class="inner__wrap">
     <button class="closeToggle">
       <span class="line1"></span>
@@ -153,7 +153,7 @@ $headerType = get_field('header_type', get_the_ID());
 </div>
 <?php endif; ?>
 
-<header id="main-header" class="<?= ($gd_fixedHeader) ? 'sticky' : '' ?> headertype__<?=$headerType?>">
+<header id="main-header" class="<?= ($gd_fixedHeader) ? 'sticky' : '' ?> headertype__<?=$headerType?> scalable__elements">
   
   <div class="row">
     

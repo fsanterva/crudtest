@@ -98,6 +98,7 @@ $socials = get_field('social_media', 'option');
   </div>
 </footer>
 </div>
+  <script><?php require get_template_directory() . '/assets/js/scaleup.js'; ?></script>
   <style> <?php require get_template_directory() . '/assets/css/footer.css'; ?> </style>
 	<?php wp_footer(); ?>
 </body>

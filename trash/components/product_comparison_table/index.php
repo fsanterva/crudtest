@@ -50,24 +50,32 @@ require get_template_directory() . '/inc/component-wrapper-top.php';
 <?php endif; ?>
   
 <div class="row row--narrow row--comparisontable to_animate">
-  <div class="table__wrap">
-    <div class="table">
+  
+<!--  NEW  -->
+  <div class="comparisontable__wrap">
     
-      <div class="thead">
-        <div class="tr">
-          <div class="td td--label">
-            <?php if( !empty( $labelGrp['top_left_label'] ) ) : ?>
-            <span><?= $labelGrp['top_left_label'] ?></span>
-            <?php endif; ?>
-          </div>
-          <?php foreach( $products as $key=>$prod ) : 
-          $productID = $prod['product']->ID;
-          $title = get_the_title($productID);
-          $perm = get_permalink($productID);
-          $img = getFeaturedImage($productID);
-          $learnMore = $prod['learn_more_button'];
-          ?>
-          <div class="td td--product">
+    <div class="labels__wrap">
+      <label><?= $labelGrp['top_left_label'] ?></label>
+      <div class="labels">
+        <?php foreach( $labelGrp['table_labels'] as $key=>$label ) : ?>
+        <span data-count="data_<?= $key; ?>"><?= $label['label']; ?></span>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    
+    <div class="slider__wrap">
+      
+      <?php foreach( $products as $key=>$prod ) : 
+        $productID = $prod['product']->ID;
+        $title = get_the_title($productID);
+        $perm = get_permalink($productID);
+        $img = getFeaturedImage($productID);
+        $learnMore = $prod['learn_more_button'];
+        $tableData = $prod['table_data'];
+        ?>
+        <div class="item">
+          
+          <div class="product__item">
             <span class="img__wrap">
               <img <?= acf_responsive_image($img['id'], '', '140px', $lazyload); ?> alt="<?= $img['alt']; ?>"/>
             </span>
@@ -86,54 +94,39 @@ require get_template_directory() . '/inc/component-wrapper-top.php';
             )); ?>
             <?php endif; ?>
           </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-
-      <div class="tbody">
-
-        <?php foreach( $labelGrp['table_labels'] as $key=>$label ) : ?>
-        <div class="tr">
-          <div class="td td--label">
-            <span><?= $label['label']; ?></span>
+          
+          <div class="specs__list">
+            <?php foreach( $tableData as $key2=>$data ) : ?>
+            <span data-count="data_<?= $key2; ?>" class="spec"><?= $data['data']; ?></span>
+            <?php endforeach; ?>
           </div>
-          <?php foreach( $products as $prod ) : ?>
-          <div class="td td--value">
-            <span><?= $prod['table_data'][$key]['data']; ?></span>
-          </div>
-          <?php endforeach; ?>
-        </div>
-        <?php endforeach; ?>
-
-      </div>
-
-      <div class="tfoot">
-        <div class="tr">
-          <div class="td td--label"></div>
-          <?php foreach( $products as $prod ) : ?>
-          <div class="td td--value">
+          
+          <div class="foot__cta">
             <?php if( $prod['enable_get_a_quote'] ) : ?>
             <?php button(
-                    array(
-                      'button_style'=>'outline',
-                      'button_size'=>'default',
-                      'button_arrow'=>1,
-                      'button_custom_class'=>'quoteBtn',
-                      'button_link'=>array(
-                        'url'=>'#',
-                        'title'=>'Get a quote',
-                        'target'=>''
-                      )
-                    )  
-                  ); ?>
+                array(
+                  'button_style'=>'outline',
+                  'button_size'=>'default',
+                  'button_arrow'=>1,
+                  'button_custom_class'=>'quoteBtn',
+                  'button_link'=>array(
+                    'url'=>'#',
+                    'title'=>'Get a quote',
+                    'target'=>''
+                  )
+                )
+              ); ?>
             <?php endif; ?>
           </div>
-          <?php endforeach; ?>
+          
         </div>
-      </div>
-
+        <?php endforeach; ?>
+      
     </div>
+    
   </div>
+  
+  
 </div>
   
 <?php require get_template_directory() . '/inc/component-wrapper-bottom.php'; ?>
